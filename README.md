@@ -1,2 +1,1 @@
-# PolyNES
-Polytech Entertainment System
+# Polytech Entertainment System
