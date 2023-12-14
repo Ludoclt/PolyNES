@@ -16,6 +16,7 @@ Console rétro NES (1987) de salon, émulée par Arduino, avec la particularité
   - ##### Soudure des headers GPIO sur une carte arduino NANO
   Nous avons fait l'acquisition de deux cartes arduino NANO neuves afin de réaliser le circuit des manettes. Les cartes étant neuves, aucun GPIO n'était soudé
  dessus, j'ai donc dû le faire.
+ 
   Ayant quelques bases en soudage, j'ai aidé certains de mes camarades qui avaient des soudures à réaliser pour leur projet, tel que des moteurs.
   
 ![pinNanoD](/documentation/Images/pinNanoD.png)
