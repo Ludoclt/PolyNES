@@ -8,7 +8,7 @@ Console rétro NES (1987) de salon, émulée par Arduino, avec la particularité
 
 ## Séance du 13 Décembre
 
-  - ##### Réalisation de la majorité du [dessin 3D du boitier de la Poly-nes](/Boitier) sur le logiciel *onshape*
+  - ##### Réalisation de la majorité du [dessin 3D du boitier de la Poly-nes](/BoitierProto) sur le logiciel *onshape*
   Le boîtier de la console, dans lequel nous installerons par la suite tous les composants électroniques, est modélisé grâce à *onshape* dans le but de l'imprimer en 3D.
   
 ![nes3d](/documentation/Images/nes3d.png)
