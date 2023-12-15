@@ -20,3 +20,8 @@ Console rétro NES (1987) de salon, émulée par Arduino, avec la particularité
   Ayant quelques bases en soudage, j'ai aidé certains de mes camarades qui avaient des soudures à réaliser pour leur projet, tel que des moteurs.
   
 ![pinNanoD](/documentation/Images/pinNanoD.png)
+
+ - ##### Anticipation de la prochaine séance
+
+  Nous avons récupéré une carte arduino DUE, deux cartes arduino nano, deux paires de module Bluetooth (Maîtres et esclaves) pour commencer à étudier le fonctionnement de la communication entre deux arduinos grâce au BlueTooth ainsi que le code qui va avec.
+  Indépendamment du Bluetooth, nous avons récupéré deux joysticks dans la même optique de se familiariser avec le composant.
