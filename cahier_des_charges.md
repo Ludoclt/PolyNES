@@ -27,4 +27,4 @@ Console rétro NES (1987) de salon, émulée par Arduino, avec la particularité
 
 ## Planning
 
-![Planning](https://github.com/Ludoclt/PolyNES/blob/main/planning.png?raw=true)
+![Planning](/planning.png)
