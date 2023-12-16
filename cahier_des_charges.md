@@ -13,17 +13,17 @@ Console rétro NES (1987) de salon, émulée par Arduino, avec la particularité
 
 ## Matériel
 
-- Arduino Giga
+- Arduino Due
+- 2x Arduino Nano
 - Boitier de la NES imprimé en 3D
 - Boitiers des manettes imprimés en 3D
-- Circuits des manettes
-- Module Bluetooth
+- Modules Bluetooth
 - Port cartouche
-- Module (HAT) HDMI
 - Ecran
+- Port VGA
 - Ports USB-C
 - Batteries
-- Boutons, leds
+- Boutons, joysticks, leds
 
 ## Planning
 
