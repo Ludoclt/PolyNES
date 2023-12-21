@@ -25,6 +25,11 @@ Console rétro NES (1987) de salon, émulée par Arduino, avec la particularité
 - Batteries
 - Boutons, joysticks, leds
 
+| Produit | Lien |
+| --- | --- |
+| Connecteur VGA femelle | https://fr.aliexpress.com/item/1005004894819520.html?spm=a2g0o.order_list.order_list_main.29.768c5e5bm8RIAR&gatewayAdapt=glo2fra |
+| Lecteur Cartouche NES 72 pins | https://fr.aliexpress.com/item/1005005056913604.html?spm=a2g0o.order_list.order_list_main.5.768c5e5bm8RIAR&gatewayAdapt=glo2fra |
+
 ## Planning
 
 ![Planning](/planning.png)
