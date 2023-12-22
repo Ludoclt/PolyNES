@@ -4,9 +4,9 @@
 ## Séance du 21 Décembre
 
 
-  - ##### Mise en place de la communication bleutooth
-  Avec l'aide de M. Masson nous avons réussi à faire communiquer un module blootooth maître avec son esclave.
-  J'ai assisté Ludovic dans l'écriture du programme visant à transférer des Octets aulieu de String grace au modules bluetooth.
+  - ##### Mise en place de la communication bluetooth
+  Avec l'aide de M. Masson nous avons réussi à faire communiquer un module bluetooth maître avec son esclave.
+  J'ai assisté Ludovic dans l'écriture du programme visant à transférer des octets au lieu de chaine de caractere grâce aux modules bluetooth.
   ```cpp
   #include <SoftwareSerial.h>
 
@@ -52,6 +52,7 @@
     
   - ##### Etablissement de la liste des éléments manquants à notre projet
   Nous nous sommes concertés pour mettre en commun le matériel manquant et ainsi le recupérer auprès du professeur ou lui demander de nous le commander.
+  Nous avons cherché sur internet des référence sur Amazon et Aliexpress.
   On peut trouver une partie de la liste dans le [cahier des charges](/cahier_des_charges.md).
 
   - ##### Réalisation d'un croquis du [dessin 3D de la manette](/boitier/manette) sur le logiciel *onshape*
@@ -60,9 +61,5 @@
 ![nes3d](/documentation/Images/nes3d2.png)
 
   
-  - ##### Soudure des headers GPIO sur une carte arduino NANO
-  Nous avons fait l'acquisition de deux cartes arduino NANO neuves afin de réaliser le circuit des manettes. Les cartes étant neuves, aucun GPIO n'était soudé
- dessus, j'ai donc dû le faire.
- 
-  Ayant quelques bases en soudage, j'ai aidé certains de mes camarades qui avaient des soudures à réaliser pour leur projet, tel que des moteurs.
-  
+  - ##### Familiarisation avec la plaque de test
+  J'ai commencé a faire un montage sur une plaque de test, sans souder, pour se rendre compte de l'espace nécessaire dans la manette. 
