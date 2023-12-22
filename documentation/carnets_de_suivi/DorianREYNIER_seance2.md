@@ -6,7 +6,7 @@
 
   - ##### Mise en place de la communication bluetooth
   Avec l'aide de M. Masson nous avons réussi à faire communiquer un module bluetooth maître avec son esclave.
-  J'ai assisté Ludovic dans l'écriture du programme visant à transférer des octets au lieu de chaîne de caracteres grâce aux modules bluetooth.
+  J'ai assisté Ludovic dans l'écriture du programme visant à transférer des octets au lieu de chaînes de caractères grâce aux modules bluetooth.
   ```cpp
   #include <SoftwareSerial.h>
 
