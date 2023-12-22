@@ -6,7 +6,7 @@
 
   - ##### Mise en place de la communication bluetooth
   Avec l'aide de M. Masson nous avons réussi à faire communiquer un module bluetooth maître avec son esclave.
-  J'ai assisté Ludovic dans l'écriture du programme visant à transférer des octets au lieu de chaine de caractere grâce aux modules bluetooth.
+  J'ai assisté Ludovic dans l'écriture du programme visant à transférer des octets au lieu de chaîne de caracteres grâce aux modules bluetooth.
   ```cpp
   #include <SoftwareSerial.h>
 
@@ -52,7 +52,8 @@
     
   - ##### Etablissement de la liste des éléments manquants à notre projet
   Nous nous sommes concertés pour mettre en commun le matériel manquant et ainsi le recupérer auprès du professeur ou lui demander de nous le commander.
-  Nous avons cherché sur internet des référence sur Amazon et Aliexpress.
+  Nous avons cherché sur internet des références sur Amazon et AliExpress.
+  
   On peut trouver une partie de la liste dans le [cahier des charges](/cahier_des_charges.md).
 
   - ##### Réalisation d'un croquis du [dessin 3D de la manette](/boitier/manette) sur le logiciel *onshape*
@@ -62,4 +63,4 @@
 
   
   - ##### Familiarisation avec la plaque de test
-  J'ai commencé a faire un montage sur une plaque de test, sans souder, pour se rendre compte de l'espace nécessaire dans la manette. 
+  J'ai commencé à faire un montage sur une plaque de test, sans souder, pour se rendre compte de l'espace nécessaire dans la manette. 
