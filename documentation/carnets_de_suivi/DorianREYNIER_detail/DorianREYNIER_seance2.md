@@ -47,6 +47,8 @@
     }
   }
   ```
+
+![Test manette](/documentation/Images/montageTestManette.png)
   
 
     
@@ -59,8 +61,12 @@
   - ##### Réalisation d'un croquis du [dessin 3D de la manette](/boitier/manette) sur le logiciel *onshape*
   Premier dessin de la manette pour l'imprimer en 3D pendant les vacances afin d'y faire rentrer la plaque de test ainsi que les composants électroniques.
   
-![nes3d](/documentation/Images/nes3d2.png)
+![nes3d2](/documentation/Images/nes3d2.png)
 
   
   - ##### Familiarisation avec la plaque de test
   J'ai commencé à faire un montage sur une plaque de test, sans souder, pour se rendre compte de l'espace nécessaire dans la manette. 
+
+  ![Test montage plaque de test](/documentation/Images/premierMontagePlaqueTest.png)
+
+  Les fils représentent juste une connection arduino-module, il manque également l'installation des leds ansi que de deux boutons.
