@@ -3,9 +3,9 @@
 *******************
 ## Séance du 21 Décembre
 
-  - ##### Etablissement de la liste des éléments manquant a notre projet
-  Nous nous sommes concertés pour mettre en commin le matériel manquant et ainsi le recupérer aupré du prof ou lui demmander de nous le commander.
-  On peut trouver une partie de la liste dans le [cahier des charges](/cahier_des_charges.md)
+  - ##### Etablissement de la liste des éléments manquants à notre projet
+  Nous nous sommes concertés pour mettre en commun le matériel manquant et ainsi le recupérer au près du prof ou lui demander de nous le commander.
+  On peut trouver une partie de la liste dans le [cahier des charges](/cahier_des_charges.md).
 
   - ##### Réalisation d'un cropquis du [dessin 3D de la manette](/boitier_manette) sur le logiciel *onshape*
   Le boîtier de la console, dans lequel nous installerons par la suite tous les composants électroniques, est modélisé grâce à *onshape* dans le but de l'imprimer en 3D.
