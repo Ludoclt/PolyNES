@@ -7,8 +7,8 @@
   Nous nous sommes concertés pour mettre en commun le matériel manquant et ainsi le recupérer au près du prof ou lui demander de nous le commander.
   On peut trouver une partie de la liste dans le [cahier des charges](/cahier_des_charges.md).
 
-  - ##### Réalisation d'un cropquis du [dessin 3D de la manette](/boitier_manette) sur le logiciel *onshape*
-  Le boîtier de la console, dans lequel nous installerons par la suite tous les composants électroniques, est modélisé grâce à *onshape* dans le but de l'imprimer en 3D.
+  - ##### Réalisation d'un croquis du [dessin 3D de la manette](/boitier/manette) sur le logiciel *onshape*
+  Premier dessin de la manette pour l'imprimer en 3D pendant les vacance afin d'y faire rentrer la plaque de tet ainsi que les composants électronique.
   
 ![nes3d](/documentation/Images/nes3d2.png)
 
@@ -19,7 +19,6 @@
  
   Ayant quelques bases en soudage, j'ai aidé certains de mes camarades qui avaient des soudures à réaliser pour leur projet, tel que des moteurs.
   
-![pinNanoD](/documentation/Images/pinNanoD.png)
 
  - ##### Anticipation de la prochaine séance
 
