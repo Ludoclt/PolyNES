@@ -35,7 +35,7 @@
   ![manette_V1_profil](/documentation/Images/manetteV1profil.png)
   
   Les modifications pour la V2 de la manette sont axées sur les deux boutons que j'avais oubliés au milieu de la manette (les boutons Start and Select). \
-  Dans mon idée de faire un mélange entre une manette de N64 et une manette de NES, le placement des boutons A et B (les jaunes) n'était pas adapté donc je les au mis en diagonale au lieu d'en ligne.\
+  Dans mon idée de faire un mélange entre une manette de N64 et une manette de NES, le placement des boutons A et B (les jaunes) n'était pas adapté donc je les ai mis en diagonale au lieu d'en ligne.\
   J'ai réimprimé la couche supérieure du modèle pour être sûr de ne pas faire d'erreur:
 
   ![manette_V2](/documentation/Images/manetteV2.png)
