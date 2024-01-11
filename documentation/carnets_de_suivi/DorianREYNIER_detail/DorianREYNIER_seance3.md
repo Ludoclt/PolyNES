@@ -18,8 +18,8 @@
   ![branchement_VGA_V1](/documentation/Images/branchementVGAV1.png)
 
   - ##### Conception de plaques de test
-  Pour éviter la fabrication de PCB, j'ai réalisé deux plaques de tests contenant l'ensemble des boutons nécessaires à la manette: quatre en forme de croix pour la "croix directionnelle", deux centrés pour les boutons Select et Start et deux boutons jaunes pour les touches d'actions "A" et "B".\
-  J'ai également retaillé les plaques pour être le plus petits possibles et prendre le moins de place dans le boîtier de la manette.
+  Pour éviter la fabrication de PCB, j'ai réalisé deux plaques de tests contenant l'ensemble des boutons nécessaires à la manette: quatre en forme de croix pour la "croix directionnelle", deux centrés pour les boutons "Select" et "Start" et deux boutons jaunes pour les touches d'actions "A" et "B".\
+  J'ai également retaillé les plaques pour qu'elle soit les plus petites possibles et prennent le moins de place dans le boîtier de la manette.
    
   ![Pcb_manette](/documentation/Images/pcbmanette.png)
   
