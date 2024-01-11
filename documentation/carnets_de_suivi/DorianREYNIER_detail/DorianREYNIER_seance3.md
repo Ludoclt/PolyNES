@@ -13,13 +13,13 @@
   ![VGA_V1](/documentation/Images/VGAV1.png)
 
   - ##### Test d'affichage
-  Avec ludovic, nous avons réalisé le montage de la prise VGA sur un arduino uno. Nous avons réussi à afficher du texte "TEST" sur le vidéo-projecteur de la salle.
+  Avec Ludovic, nous avons réalisé le montage de la prise VGA sur un arduino uno. Nous avons réussi à afficher le texte "TEST" sur le vidéo-projecteur de la salle.
   
   ![branchement_VGA_V1](/documentation/Images/branchementVGAV1.png)
 
-  - ##### Conception de Plaque de test
-  Pour éviter la fabrication de pcbs, j'ai réalisé deux plaque de tests contenant l'essemble des boutons necessaire à la manette: quatre en forme de croix pour la "croix directionnel", deux centrés pour les bouttons select et start et deux boutons jaunes pour les touche "A" et "B" ,les touches d'actions.\
-  J'ai également retaillé les plaques pour être le plus pétits possibles et prendre le moins de place dans le boitier de la manette.
+  - ##### Conception de plaques de test
+  Pour éviter la fabrication de PCB, j'ai réalisé deux plaques de tests contenant l'ensemble des boutons nécessaires à la manette: quatre en forme de croix pour la "croix directionnelle", deux centrés pour les boutons Select et Start et deux boutons jaunes pour les touches d'actions "A" et "B".\
+  J'ai également retaillé les plaques pour être le plus petits possibles et prendre le moins de place dans le boîtier de la manette.
    
   ![Pcb_manette](/documentation/Images/pcbmanette.png)
   
