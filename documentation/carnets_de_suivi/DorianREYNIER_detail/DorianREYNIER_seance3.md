@@ -23,7 +23,7 @@
    
   ![Pcb_manette](/documentation/Images/pcbmanette.png)
   
-- ##### Finalisation du [dessin 3D de la manette V2](/boitier/manettev2) sur le logiciel *onshape*
+- ##### Finalisation du [dessin 3D de la manette V2](/boitier/manettev2.stl) sur le logiciel *onshape*
   Amélioration des finitions et des détails de la manette, ajout deux 4 trous pour insérer des leds pour créer un indicateur de batterie, ajout d'un emplacement pour un interrupteur d'allumage de la manette, création d'un emplacement pour une prise USB-C.
   
   ![manette_V2_3D](/documentation/Images/manettev23D.png)
