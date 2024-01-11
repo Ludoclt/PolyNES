@@ -20,7 +20,6 @@
   - ##### Conception de Plaque de test
   Pour éviter la fabrication de pcbs, j'ai réalisé deux plaque de tests contenant l'essemble des boutons necessaire à la manette: quatre en forme de croix pour la "croix directionnel", deux centrés pour les bouttons select et start et deux boutons jaunes pour les touche "A" et "B" ,les touches d'actions.
   J'ai également retaillé les plaques pour être le plus pétits possibles et prendre le moins de place dans le boitier de la manette.
-  J'ai réimprimé la couche supérieure du modèle pour être sûre de ne pas faire d'erreur:
    
   ![Pcb_manette](/documentation/Images/pcbmanette.png)
   
@@ -35,8 +34,9 @@
   ![manette_V1](/documentation/Images/manetteV1.png)
   ![manette_V1_profil](/documentation/Images/manetteV1profil.png)
   
-  Les modifications pour la V2 de la manette sont axés sur les deux bouttons que j'avais oublié au milieu de la manette (les bouttons start and select).
+  Les modifications pour la V2 de la manette sont axés sur les deux bouttons que j'avais oublié au milieu de la manette (les bouttons start and select). \n  
   Dans mon idée de faire un mélange entre une manette de N64 et une manette de NES, le placement des bouttons A et B (les jaunes) n'était pas adapté donc je les au mis en digonale au lieu d'en ligne.
+  J'ai réimprimé la couche supérieure du modèle pour être sûre de ne pas faire d'erreur:
 
   ![manette_V2](/documentation/Images/manetteV2.png)
 
