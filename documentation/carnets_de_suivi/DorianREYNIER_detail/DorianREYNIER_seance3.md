@@ -35,6 +35,7 @@
   ![manette_V1_profil](/documentation/Images/manetteV1profil.png)
   
   Les modifications pour la V2 de la manette sont axés sur les deux bouttons que j'avais oublié au milieu de la manette (les bouttons start and select).
+  
   Dans mon idée de faire un mélange entre une manette de N64 et une manette de NES, le placement des bouttons A et B (les jaunes) n'était pas adapté donc je les au mis en digonale au lieu d'en ligne.
   J'ai réimprimé la couche supérieure du modèle pour être sûre de ne pas faire d'erreur:
 
