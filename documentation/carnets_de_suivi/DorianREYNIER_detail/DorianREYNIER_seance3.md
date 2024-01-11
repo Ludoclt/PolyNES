@@ -4,11 +4,11 @@
 ## Séance du 11 Janvier
 
 - ##### Soudure des headers GPIO sur une carte STM32
-  La carte STM32 que nous avons pour le projet n'avait aucun header de soudé dessus, j'ai donc souder des headers femelles pour simplifier les prochains branchements tels que ceux du lecteur de cartouche.
+  La carte STM32 que nous avons pour le projet n'avait aucun header soudé dessus, j'ai donc soudé des headers femelles pour simplifier les prochains branchements tels que ceux du lecteur de cartouche.
   
   ![STM32_headers](/documentation/Images/STM32headers.png)
   
-  Nous avons reçut les prises VGA commandés sur aliexpress. J'ai soudé les cables dessus en respectant les schéma de de montage selectionné par Ludovic.
+  Nous avons reçu les prises VGA commandées sur AliExpress. J'ai soudé les câbles dessus en respectant le schéma de montage sélectionné par Ludovic.
   
   ![VGA_V1](/documentation/Images/VGAV1.png)
 
