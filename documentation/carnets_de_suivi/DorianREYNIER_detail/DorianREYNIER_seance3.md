@@ -4,7 +4,7 @@
 ## Séance du 11 Janvier
 
 - ##### Soudure des headers GPIO sur une carte STM32
-  La carte STM32 que nous avons pour le projet n'avait aucun header de soudé dessu, j'ai donc souder des header femelles pour simplifier les prochain branchements tels que ceux du lecteur de cartouche.
+  La carte STM32 que nous avons pour le projet n'avait aucun header de soudé dessus, j'ai donc souder des headers femelles pour simplifier les prochains branchements tels que ceux du lecteur de cartouche.
   
   ![STM32_headers](/documentation/Images/STM32headers.png)
   
