@@ -58,7 +58,7 @@
   
   On peut trouver une partie de la liste dans le [cahier des charges](/cahier_des_charges.md).
 
-  - ##### Réalisation d'un croquis du [dessin 3D de la manette](/boitier/manette) sur le logiciel *onshape*
+  - ##### Réalisation d'un croquis du [dessin 3D de la manette](/boitier/manette.stl) sur le logiciel *onshape*
   Premier dessin de la manette pour l'imprimer en 3D pendant les vacances afin d'y faire rentrer la plaque de test ainsi que les composants électroniques.
   
 ![nes3d2](/documentation/Images/nes3d2.png)
