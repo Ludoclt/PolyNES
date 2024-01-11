@@ -24,21 +24,21 @@
   ![Pcb_manette](/documentation/Images/pcbmanette.png)
   
 - ##### Finalisation du [dessin 3D de la manette V2](/boitier/manettev2.stl) sur le logiciel *onshape*
-  Amélioration des finitions et des détails de la manette, ajout deux 4 trous pour insérer des leds pour créer un indicateur de batterie, ajout d'un emplacement pour un interrupteur d'allumage de la manette, création d'un emplacement pour une prise USB-C.
+  Amélioration des finitions et des détails de la manette, ajout de quatres trous pour insérer des leds pour créer un indicateur de batterie, ajout d'un emplacement pour un interrupteur d'allumage de la manette, création d'un emplacement pour une prise USB-C.
   
   ![manette_V2_3D](/documentation/Images/manettev23D.png)
     
-  - ##### Test de taille du mdèle 3D
-  J'ai réalisé une première impression 3D de mauvaise qualitée pour vérifier que la taille, la forme ainsi que l'emplacement des boutons et autre composants me conviennent.
+  - ##### Test de taille du modèle 3D
+  J'ai réalisé une première impression 3D de mauvaise qualité pour vérifier que la taille, la forme ainsi que l'emplacement des boutons et autres composants me conviennent.
 
   ![manette_V1](/documentation/Images/manetteV1.png)
   ![manette_V1_profil](/documentation/Images/manetteV1profil.png)
   
-  Les modifications pour la V2 de la manette sont axés sur les deux bouttons que j'avais oublié au milieu de la manette (les bouttons start and select). \
-  Dans mon idée de faire un mélange entre une manette de N64 et une manette de NES, le placement des bouttons A et B (les jaunes) n'était pas adapté donc je les au mis en digonale au lieu d'en ligne.\
-  J'ai réimprimé la couche supérieure du modèle pour être sûre de ne pas faire d'erreur:
+  Les modifications pour la V2 de la manette sont axés sur les deux boutons que j'avais oubliais au milieu de la manette (les boutons Start and Select). \
+  Dans mon idée de faire un mélange entre une manette de N64 et une manette de NES, le placement des boutons A et B (les jaunes) n'était pas adapté donc je les au mis en diagonale au lieu d'en ligne.\
+  J'ai réimprimé la couche supérieure du modèle pour être sûr de ne pas faire d'erreur:
 
   ![manette_V2](/documentation/Images/manetteV2.png)
 
-  Pour référence voici une photo d'une manette de Nintendo 64, manette considéré comme une des pires manettes, développés.
+  Pour référence voici une photo d'une manette de Nintendo 64, manette considérée comme une des pires manettes développée.
   ![manette_N64](/documentation/Images/manetteN64.png)
