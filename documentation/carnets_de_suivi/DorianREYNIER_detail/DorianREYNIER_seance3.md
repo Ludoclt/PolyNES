@@ -20,6 +20,7 @@
   - ##### Conception de Plaque de test
   Pour éviter la fabrication de pcbs, j'ai réalisé deux plaque de tests contenant l'essemble des boutons necessaire à la manette: quatre en forme de croix pour la "croix directionnel", deux centrés pour les bouttons select et start et deux boutons jaunes pour les touche "A" et "B" ,les touches d'actions.
   J'ai également retaillé les plaques pour être le plus pétits possibles et prendre le moins de place dans le boitier de la manette.
+  J'ai réimprimé la couche supérieure du modèle pour être sûre de ne pas faire d'erreur:
    
   ![Pcb_manette](/documentation/Images/pcbmanette.png)
   
