@@ -40,5 +40,5 @@
 
   ![manette_V2](/documentation/Images/manetteV2.png)
 
-  Pour référence voici une photo d'une manette de Nintendo 64, manette considérée comme une des pires manettes développée.
+  Pour référence, voici une photo d'une manette de Nintendo 64, manette considérée comme une des pires manettes développées.
   ![manette_N64](/documentation/Images/manetteN64.png)
