@@ -24,7 +24,7 @@ AT+LINK= 2015,09,23165
   
 Sources :
 
-- [Cour](https://users.polytech.unice.fr/~pmasson/Enseignement/Elements%20de%20robotique%20avec%20arduino%20-%20Communications%20RF%20-%20Projection%20-%20MASSON.pdf=)
+- [Cours](https://users.polytech.unice.fr/~pmasson/Enseignement/Elements%20de%20robotique%20avec%20arduino%20-%20Communications%20RF%20-%20Projection%20-%20MASSON.pdf=)
 - [Forum Arduino](https://forum.arduino.cc/t/hc05-bluetooth-with-multi-slaves/274151/7)
 - [Doc commande AT HC06](https://btsciel.lyceehugobesancon.org/Module-bluetooth-HC06-commande-AT.html)
 - [Doc commande AT HC05](https://s3-sa-east-1.amazonaws.com/robocore-lojavirtual/709/HC-05_ATCommandSet.pdf)
