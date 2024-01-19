@@ -3,8 +3,8 @@
 *******************
 ## Séance du 18 Janvier
 
-  - ##### Présentation de mi parcour
-  Durant les 20 premières minutes nous avons préparé les montages des démonstratrions et nous sommes passés à la présentation.
+  - ##### Présentation de mi parcours
+  Durant les 20 premières minutes nous avons préparé les montages des démonstrations et nous sommes passés à la présentation.
  
 
   - ##### Connectique Bluetooth
