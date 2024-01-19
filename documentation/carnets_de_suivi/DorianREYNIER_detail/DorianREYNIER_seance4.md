@@ -13,7 +13,7 @@
   - ##### Soudure
   Durant la majeure partie du cours j'ai fait de la soudure.
   J'ai soudé quelques headers GPIO mâles sur des level shifter qui seront utilisés pour la communication entre la cartouche et la carte STM32 nucléo car la 
-  STM ne délivre que du 3.3V alors que la cartouche communique en 6V.
+  STM ne délivre que du 3.3V alors que la cartouche communique en 5V.
   
   ![Header level shifter](/documentation/Images/headshifter.png)
 
