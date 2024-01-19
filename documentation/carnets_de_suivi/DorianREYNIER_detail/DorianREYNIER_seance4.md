@@ -22,7 +22,7 @@
   ![schéma electrique cartouche](/documentation/Images/schema_cartouche.png)
   ![soudure port cartouche](/documentation/Images/soudure_port_cartouche.png)
 
-  J'ai soudé des cables sur les PCB des manettes pour qu'elle puisse communiquer avec l'arduino.
+  J'ai soudé des câbles sur les PCB des manettes pour qu'elles puissent communiquer avec l'arduino.
   
   ![soudure pcb manette](/documentation/Images/soudure_pcb_manette.png)
 
