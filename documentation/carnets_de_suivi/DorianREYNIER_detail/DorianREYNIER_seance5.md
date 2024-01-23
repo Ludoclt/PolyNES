@@ -25,6 +25,47 @@
 
   ![Montage Shift Register](/documentation/Images/Montage_Shift_Register.png)
   ![Test Shift Register](/documentation/Images/tst_shift_registers.png)
+```cpp
+// code pour tester registre à décalage
+//PL pin1
+int load = 7;
+
+//CE pin 15
+int clockEnablePin = 4;
+
+//Q7 pin 7
+int dataIn = 5;
+
+//CP pin2
+int clockIn = 6;
+
+
+void setup() {
+  // put your setup code here, to run once:
+Serial.begin(9600);
+pinMode(load, OUTPUT);
+pinMode(clockEnablePin, OUTPUT);
+pinMode(clockIn, OUTPUT);
+pinMode(dataIn, INPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(load, LOW);
+  delayMicroseconds(5);
+  digitalWrite(load, HIGH);
+  delayMicroseconds(5);
+
+  digitalWrite(clockIn, HIGH);
+  digitalWrite(clockEnablePin, LOW);
+  byte incoming = shiftIn(dataIn, clockIn, LSBFIRST);
+  digitalWrite(clockEnablePin, HIGH);
+  Serial.print("Pin States:\r\n");
+  Serial.println(incoming, BIN);
+  delay(200);
+
+}
+```
   
   
 - ##### Connectique Bluetooth
