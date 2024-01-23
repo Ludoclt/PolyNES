@@ -9,7 +9,7 @@
   J'ai soudé quelques des GPIO mâles sur de nouveaux level shifter fournis par le professeur ainsi que sur deux ESP32-C3 que M. Masson nous fournit en   remplacement des XIAO ESP32-S3.
   
   ![Header level shifter](/documentation/Images/headshifter2.png)
-  ![ESP32C3](/documentation/Images/ESP32C3.png)
+  ![ESP32-C3](/documentation/Images/ESP32-C3.png)
 
   J'ai soudé pas mal de materiel pour d'autre groupes tel que des moteurs, des GPIO, des câbles...
     
@@ -23,7 +23,7 @@
   J'ai d'abord essayé le Shift Register avec un bouton sur une arduino nano, le montage réussi, j'ai reproduit le montage sur un ESP32-C3, mais il n'a          fonctionné tout de suite. En chechant j'ai découvert que le La connection est désactivée de base sur ces ESP32-C3, après réactivatrion dans l'onglet outil    de l'IDE Arduino, tout à fonctionné comme souhaité.
 
   ![Shift Register](/documentation/Images/Shift_Register.png)
-  ![Shift Register](/documentation/Images/Shift_Register.png)
+  ![Test Shift Register](/documentation/Images/tst_shift_registers.png.png)
   
   
 - ##### Connectique Bluetooth
