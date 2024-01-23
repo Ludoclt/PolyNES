@@ -22,8 +22,8 @@
 
   J'ai d'abord essayé le Shift Register avec un bouton sur une arduino nano, le montage réussi, j'ai reproduit le montage sur un ESP32-C3, mais il n'a          fonctionné tout de suite. En chechant j'ai découvert que le La connection est désactivée de base sur ces ESP32-C3, après réactivatrion dans l'onglet outil    de l'IDE Arduino, tout à fonctionné comme souhaité.
 
-  ![Shift Register](/documentation/Images/Shift_Register.png)
-  ![Test Shift Register](/documentation/Images/tst_shift_registers.png.png)
+  ![Montage Shift Register](/documentation/Images/Montage_Shift_Register.png)
+  ![Test Shift Register](/documentation/Images/tst_shift_registers.png)
   
   
 - ##### Connectique Bluetooth
