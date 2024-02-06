@@ -1,10 +1,17 @@
 *******************
 # Compte rendu 
 *******************
-## Séance du 18 Janvier
+## Séance du 5 Févirer
+
+- ##### Réception des composants commandés
+  Nous avons reç le materiel commandé avant les vacances de noël tel que des ports USB C, des boutons avec embouts de couleurs, un joystick...  
+  J'ai également recupérer un troisième esp32 C3  
+ 
+  ![USBC](/documentation/Images/USBC.png)
+
 
 - ##### Soudure
-  Nous avons récupéré du matériel pour avancer dans le projet:  
+ 
     
   j'ai soudé quelques des GPIO mâles sur de nouveaux level shifter fournis par le professeur ainsi que sur deux ESP32-C3 que M. Masson nous fournit en       
   remplacement des XIAO ESP32-S3.
