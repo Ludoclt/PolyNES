@@ -26,6 +26,6 @@
   Pour la prochaine scéance, je fais tester ce même pour faire communiquer deux client avec le serveur.
 
 - ##### Test impression
-  J'ai lancé un impression 3D d'un bout de la coque principale du projet pour vérifier quel soit assez solide pour supporter le retré des cartouches
+  J'ai lancé un impression 3D d'un bout de la coque principale du projet pour vérifier quel soit assez solide pour supporter le retré des cartouches.  
   ![test3D](/documentation/Images/test3D.png)
   
