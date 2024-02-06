@@ -138,3 +138,132 @@ Console rétro NES (1987) de salon, émulée par Arduino, avec la particularité
 
   Pour référence, voici une photo d'une manette de Nintendo 64, manette considérée comme une des pires manettes développées.
   ![manette_N64](/documentation/Images/manetteN64.png)
+
+## Séance du 18 Janvier
+
+  - ##### Présentation de mi parcours
+  Durant les 20 premières minutes nous avons préparé les montages des démonstrations et nous sommes passés à la présentation.
+ 
+
+  - ##### Connectique Bluetooth
+  Avec Ludovic, nous avons connecté deux esclaves (module Bluetooth HC06) à un maître (module Bluetooth HC05), nous avons réussi à les appareiller ensemble     mais nous n'avons pas pu les tester faute de port USB.
+
+  - ##### Soudure
+  Durant la majeure partie du cours j'ai fait de la soudure.
+  J'ai soudé quelques headers GPIO mâles sur des level shifter qui seront utilisés pour la communication entre la cartouche et la carte STM32 nucléo car la 
+  STM ne délivre que du 3.3V alors que la cartouche communique en 5V.
+  
+  ![Header level shifter](/documentation/Images/headshifter.png)
+
+  J'ai soudé des groupes de câbles sur le port de la cartouche en respectant le schéma électrique donné sur le schéma ci-dessous.
+  
+  ![schéma electrique cartouche](/documentation/Images/schema_cartouche.png)
+  ![soudure port cartouche](/documentation/Images/soudure_port_cartouche.png)
+
+  J'ai soudé des câbles sur les PCB des manettes pour qu'elles puissent communiquer avec l'arduino.
+  
+  ![soudure pcb manette](/documentation/Images/soudure_pcb_manette.png)
+
+
+  - ##### Gestion du hardware
+  La manette étant trop épaisse nous cherchons un agencement prenant moins de place pour essayer de réduire la hauteur de cette dernière.
+  Nous sommes arrivés à la conclusion que remplacer l'arduino nano et le module HC06 par un XIAO esp32-s3 nous permetrait de gagner 50 millimètres de      
+  hauteur.
+
+  ![agencement V1](/documentation/Images/agencementV1.png)
+## Séance du 18 Janvier
+
+- ##### Soudure
+  Nous avons récupéré du matériel pour avancer dans le projet:  
+    
+  j'ai soudé quelques des GPIO mâles sur de nouveaux level shifter fournis par le professeur ainsi que sur deux ESP32-C3 que M. Masson nous fournit en       
+  remplacement des XIAO ESP32-S3.
+  
+  ![Header level shifter](/documentation/Images/headshifter2.png)
+  ![ESP32-C3](/documentation/Images/ESP32-C3.png)
+
+  J'ai soudé pas mal de matériel pour d'autres groupes tel que des moteurs, des GPIO, des câbles...
+    
+  ![soudure moteur](/documentation/Images/soudure_moteur.png)
+
+  Ludovic m'avait donné des Shift register 74CH595 (Shift register SIPO), en me renseignant j'ai découvert la distinction entre un Shift register SIPO et un     Shift register PISO.  
+  En expliquant mes nécessités à M. Juan il m'a trouvé des Shift register PISO (SN74LS165AN)
+
+  ![Shift Register](/documentation/Images/Shift_Register.png)
+
+  J'ai d'abord essayé le Shift register avec un bouton sur une arduino nano, le montage réussi, j'ai reproduit le montage sur un ESP32-C3, mais il n'a          fonctionné tout de suite. En cherchant j'ai découvert que la connexion est désactivée de base sur ces ESP32-C3, après réactivation dans l'onglet outil de    l'IDE Arduino, tout a fonctionné comme souhaité.
+
+  ![Montage Shift Register](/documentation/Images/Montage_Shift_Register.png)
+  ![Test Shift Register](/documentation/Images/tst_shift_registers.png)
+```cpp
+// code pour tester registre à décalage
+//PL pin1
+int load = 7;
+
+//CE pin 15
+int clockEnablePin = 4;
+
+//Q7 pin 7
+int dataIn = 5;
+
+//CP pin2
+int clockIn = 6;
+
+
+void setup() {
+  // put your setup code here, to run once:
+Serial.begin(9600);
+pinMode(load, OUTPUT);
+pinMode(clockEnablePin, OUTPUT);
+pinMode(clockIn, OUTPUT);
+pinMode(dataIn, INPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(load, LOW);
+  delayMicroseconds(5);
+  digitalWrite(load, HIGH);
+  delayMicroseconds(5);
+
+  digitalWrite(clockIn, HIGH);
+  digitalWrite(clockEnablePin, LOW);
+  byte incoming = shiftIn(dataIn, clockIn, LSBFIRST);
+  digitalWrite(clockEnablePin, HIGH);
+  Serial.print("Pin States:\r\n");
+  Serial.println(incoming, BIN);
+  delay(200);
+
+}
+```
+  
+  
+- ##### Connectique Bluetooth
+  Pendant la fin du cours, j'ai commencé les recherches pour mettre en place un connexion bluetooth entre les ESP32-C3, un agissant comme un serveur et     l'autre comme un client.
+
+Une fois le problème du bluetooth résolue il ne restera plus que le montage final des manettes.
+
+## Séance du 5 Févirer
+
+- ##### Réception des composants commandés
+  Nous avons reç le materiel commandé avant les vacances de noël tel que des ports USB C, des boutons avec embouts de couleurs, un joystick...  
+  J'ai également recupérer un troisième esp32 C3  
+ 
+  ![USBC](/documentation/Images/USBC.png)
+
+
+- ##### Soudure
+ 
+  Comme à chaque fois l'esp32 était neuf, jai donc soudé les GPIO mâles dessus. Un camarade m'a demandé de lui soudé les siens, ce que j'ai fait.       
+
+  ![ESP32-C3_2](/documentation/Images/ESP32-C3_2.png)
+
+  Les tests du Shift register étant concluants, j'ai installé le composant sur ma plaque d'essai et j'y ai soudé les bouttons.  
+  j'ai du souder des resistances sur les bouton car l'usage du pullup est impossible combiné avec un Shift register.  
+  ![pcb_recto](/documentation/Images/pcb_recto.png)    
+  ![pcb_verso](/documentation/Images/pcb_verso.png)
+  
+- ##### Connectique Bluetooth
+  J'ai également reussi à établir la connection Bluetooth entre deux esp32 (un serveur et un client) grâce aux codes exemples fourni dans la bibliotheque BLE.
+  Pour la prochaine scéance, je fais tester ce même pour faire communiquer deux client avec le serveur.
+  
