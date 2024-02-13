@@ -7,18 +7,17 @@
   Après installation, nous nous sommes rendu compte que l'ajout d'un joystick était inutile. En effet le joystick étant digital et la nes comprennant le        numérique, le joystick est injouable (il faut aller tout au bout de la course pour qu'il soit détecté). Ne représantant pas de défit technique (lecture de    deux potentiomères), nous avons pris la décision de le retirer.
   Ce retrait implique une retuouche sur le modèle 3D pour retirer son logement [dessin 3D de la manette sans joystick](/boitier/manette     V3).
  
-  ![Manette V3](/documentation/Images/[manette_V3.png)
+  ![Manette V3](/documentation/Images/manette_V3.png)
 
 
 - ##### Soudure
  
-  Comme à chaque fois l'esp32 était neuf, jai donc soudé les GPIO mâles dessus. Un camarade m'a demandé de lui soudé les siens, ce que j'ai fait.       
+J'ai touvé un montage plus efficace pour les pcb des manettes, j'ai donc due désouder tout les fils et refaire le montage du début.    
 
-  ![ESP32-C3_2](/documentation/Images/ESP32-C3_2.png)
+  ![PCB V2](/documentation/Images/pcbV2.png)
 
-  Les tests du Shift register étant concluants, j'ai installé le composant sur ma plaque d'essai et j'y ai soudé les bouttons.  
-  j'ai du souder des resistances sur les bouton car l'usage du pullup est impossible combiné avec un Shift register.  
-  ![pcb_recto](/documentation/Images/pcb_recto.png)    
+  J'ai également commencé a faire une carte video pour transformer la sortie de huit sorties par composantes vers une sortie par composante pour le vga
+  
   ![pcb_verso](/documentation/Images/pcb_verso.png)
   
 - ##### Connectique Bluetooth
