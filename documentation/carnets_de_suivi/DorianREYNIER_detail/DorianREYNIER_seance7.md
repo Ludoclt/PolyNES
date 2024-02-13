@@ -12,13 +12,15 @@
 
 - ##### Soudure
  
-J'ai touvé un montage plus efficace pour les pcb des manettes, j'ai donc due désouder tout les fils et refaire le montage du début.    
+  J'ai touvé un montage plus efficace pour les pcb des manettes, j'ai donc due désouder tout les fils et refaire le montage du début.    
 
   ![PCB V2](/documentation/Images/pcbV2.png)
 
-  J'ai également commencé a faire une carte video pour transformer la sortie de huit sorties par composantes vers une sortie par composante pour le vga
+    J'ai également commencé a faire une carte video pour transformer la sortie de huit sorties par composantes vers une sortie par            composante pour le vga
   
-  ![pcb_verso](/documentation/Images/pcb_verso.png)
+  ![PCB video](/documentation/Images/pcb_video.png)
+
+  Comme a mon habitude j'ai soudé des cables sur de moteurs ainsi que des bouttons et des headers sur des modules diverses pour les autres groupes.
   
 - ##### Connectique Bluetooth
   J'ai également reussi à établir la connection Bluetooth entre deux esp32 (un serveur et un client) grâce aux codes exemples fourni dans la bibliotheque BLE.
