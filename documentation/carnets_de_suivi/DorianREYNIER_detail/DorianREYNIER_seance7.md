@@ -5,9 +5,9 @@
 
 - ##### Modification du cahier des charges
   Après installation, nous nous sommes rendu compte que l'ajout d'un joystick était inutile. En effet le joystick étant digital et la nes comprennant le        numérique, le joystick est injouable (il faut aller tout au bout de la course pour qu'il soit détecté). Ne représantant pas de défit technique (lecture de    deux potentiomères), nous avons pris la décision de le retirer.
-  Ce retrait implique une retuouche sur le modèle 3D pour retirer son logement [dessin 3D de la manette sans joystick](/manette V3).
+  Ce retrait implique une retuouche sur le modèle 3D pour retirer son logement [dessin 3D de la manette sans joystick](/boitier/manette     V3).
  
-  ![USBC](/documentation/Images/USBC.png)
+  ![Manette V3](/documentation/Images/[manette_V3.png)
 
 
 - ##### Soudure
