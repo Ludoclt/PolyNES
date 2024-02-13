@@ -25,7 +25,7 @@
 - ##### Impression 3D
   Durant le week end ainsi que la JPO, j'ai demandé à M.Jaun d'imprimer le boitier de la console.  
   Le boitier ayant une face de 256 mm, une seule imprimante avait un plateau suffisamment grand, le problème est que cette imprimante à nombreuses difficultés, l'impression a échoué 4 fois. J'ai donc dû refaire le [boitier](/boitier/boitier_mini.stl) pour le faire rentrer sur le plateau des prusa mk4 (25cm max).  
-  A cause des nombreux détails ainsi que la struckture, il le remodelage du modèle était aussi long de sa conception.
+  À cause des nombreux détails ainsi que la structure, il le remodelage du modèle était aussi long de sa conception.
   
   ![boitier 3D mini](/documentation/Images/boitier_3D_mini.png)
   
