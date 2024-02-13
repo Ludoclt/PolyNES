@@ -31,6 +31,5 @@
 
 - ##### Décoration du boitier
   J'ai commencé a me faire la mais sur le logiciel inkscape pour réaliser des autocolant pour appliquer sur la console
-  [P vert](/boitier/Logo_polytech_vert.svg)
   
   ![P vert](/documentation/Images/Logo_polytech_vert.svg)
