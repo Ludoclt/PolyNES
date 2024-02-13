@@ -7,7 +7,7 @@
   Après installation, nous nous sommes rendu compte que l'ajout d'un joystick était inutile. En effet le joystick étant digital et la nes comprenant le numérique, le joystick est injouable (il faut aller tout au bout de la course pour qu'il soit détecté). Ne représentant pas de déft technique (lecture de deux potentiomètres), nous avons pris la décision de le retirer.  
   Ce retrait implique une retouche sur le modèle 3D pour retirer son logement [dessin 3D de la manette sans joystick](/boitier/manettev3.stl).
  
-  ![Manette V3](/documentation/Images/manette_V3.png)
+  ![Manette V3](/documentation/Images/Manette_V3.png)
 
 
 - ##### Soudure
