@@ -17,13 +17,13 @@
   ![ESP32-C3_2](/documentation/Images/ESP32-C3_2.png)
 
   Les tests du Shift register étant concluants, j'ai installé le composant sur ma plaque d'essai et j'y ai soudé les boutons.  
-  J'ai du souder des resistances sur les boutons car l'usage du pullup est impossible combiné avec un Shift register.  
+  J'ai dû souder des résistances sur les boutons car l'usage du pullup est impossible combiné avec un Shift register.  
   ![pcb_recto](/documentation/Images/pcb_recto.png)    
   ![pcb_verso](/documentation/Images/pcb_verso.png)
   
 - ##### Connectique Bluetooth
   J'ai également réussi à établir la connection Bluetooth entre deux esp32 (un serveur et un client) grâce aux codes exemples fournis dans la bibliothèque BLE.
-  Pour la prochaine séance, je fais tester ce même code pour faire communiquer deux clients avec le serveur.
+  Pour la prochaine séance, je vais tester ce même code pour faire communiquer deux clients avec le serveur.
 
 - ##### Test impression
   J'ai lancé une impression 3D d'un bout de la coque principale du projet pour vérifier qu'elle soit assez solide pour supporter le retrait des cartouches.  
