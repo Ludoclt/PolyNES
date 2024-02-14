@@ -4,7 +4,9 @@
 void debugInit();
 char getChar();
 void sendChar(char c);
+void sendLong(unsigned long dword);
 void print(const char *s);
 void println(const char *s);
+void error(const char *s);
 
 #endif

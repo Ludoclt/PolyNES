@@ -3,19 +3,24 @@
 #include "debug.h"
 #include "delay.h"
 
+#define SYSTEM_CLOCK_SPEED 180000000
+
+#define FNAME "test.txt"
+
 int main()
 {
     // setup
     systemClockInit();
+    sysTickInit(SYSTEM_CLOCK_SPEED);
     debugInit();
 
     // loop
     while (1)
     {
         println("test");
-        delay(5000);
+        delay_ms(1000);
         println("autre test");
-        delay(5000);
+        delay_ms(1000);
     }
 
     return 0;

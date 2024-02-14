@@ -32,6 +32,15 @@ void sendChar(char c)
     USART3->DR = c;
 }
 
+void sendLong(unsigned long dword)
+{
+    while (dword)
+    {
+        sendChar(dword & 0xFF);
+        dword >>= 8;
+    }
+}
+
 void print(const char *s)
 {
     while (*s)
@@ -42,4 +51,10 @@ void println(const char *s)
 {
     print(s);
     sendChar('\n');
+}
+
+void error(const char *s)
+{
+    print("Error ! ");
+    println(s);
 }

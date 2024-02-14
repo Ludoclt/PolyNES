@@ -1,6 +1,7 @@
 #ifndef DELAY_H
 #define DELAY_H
 
-void delay(unsigned int);
+void sysTickInit(unsigned int ahb_freq);
+void delay_ms(unsigned int time);
 
 #endif
