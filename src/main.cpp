@@ -1,7 +1,7 @@
 #include <stm32f4xx.h>
 #include "clock.h"
 #include "debug.h"
-#include "delay.h"
+#include "tick.h"
 
 #define SYSTEM_CLOCK_SPEED 180000000
 

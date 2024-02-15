@@ -4,6 +4,11 @@
 #include "diskio.h"
 
 #include <stm32f4xx.h>
+#include "tick.h"
+#include "gpio.h"
+#include "debug.h"
+
+#define NULL 0
 
 #define RESP_NONE 0
 #define RESP_SHORT 1
@@ -36,7 +41,7 @@ static int send_cmd(WORD idx, DWORD arg, int resp_type, DWORD *buf)
 	DWORD s;
 	DWORD start;
 
-	k_delay(1);
+	delay_ms(1);
 
 	if (idx & 0x80)
 	{ /* ACMD class */
@@ -56,12 +61,12 @@ static int send_cmd(WORD idx, DWORD arg, int resp_type, DWORD *buf)
 		cmd |= (1 << 6) | (1 << 7);
 
 	SDIO->CMD = cmd;
-	start = k_ticks();
+	beginCounter(100);
 
 	while (1)
 	{
 
-		if (k_elapsed(start) > ms_to_ticks(100))
+		if (isTimeElapsed())
 		{
 			break;
 		}
@@ -74,12 +79,14 @@ static int send_cmd(WORD idx, DWORD arg, int resp_type, DWORD *buf)
 			/* check if timeout */
 			if (s & (1 << 3))
 			{
-				err("%s timeout idx=%d arg=%08x\n", __func__, idx, (uint32_t)arg);
+				error("timeout in send_cmd arg=");
+				sendLong((uint32_t)arg);
+				sendChar('\n');
 				return 0;
 			}
 
 			/* check if crc err */
-			if (s & 1 << 1)
+			if (s & (1 << 1))
 			{
 				if (idx == 1 || idx == 12 || idx == 41)
 					break;
@@ -87,7 +94,7 @@ static int send_cmd(WORD idx, DWORD arg, int resp_type, DWORD *buf)
 				return 0;
 			}
 
-			if (s & 1 << 6)
+			if (s & (1 << 6))
 				break;
 		}
 	}
@@ -108,9 +115,9 @@ static int check_tran(DWORD tout_ms)
 	DWORD t;
 	DWORD resp;
 
-	t = k_ticks();
+	beginCounter(tout_ms);
 
-	while (k_elapsed(t) < ms_to_ticks(tout_ms))
+	while (isTimeElapsed())
 	{
 		if (send_cmd(13, ((DWORD)card_rca) << 16, RESP_SHORT, &resp) && ((resp & 0x01e00) == 0x00800))
 			return 1;
@@ -128,50 +135,55 @@ DSTATUS disk_initialize(BYTE pdrv)
 
 	dstatus = STA_NOINIT;
 
-	/* SDIO_CD: input gpio, card detect */
-	gpio_func(IO(PORTB, 15), 0);
-	gpio_dir(IO(PORTB, 15), 0);
-	gpio_mode(IO(PORTB, 15), PULL_NO);
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
 
-	/* SDIO_D0 */
-	gpio_func(IO(PORTC, 8), 12);
-	gpio_mode(IO(PORTC, 8), PULL_NO);
+	/* SDIO_CD: input gpio, card detect */
+	// gpio_func(IO(PORTB, 15), 0);
+	// gpio_dir(IO(PORTB, 15), 0);
+	// gpio_mode(IO(PORTB, 15), PULL_NO);
+
+	/* SDIO_D0 PC8 */
+	setPinAF(GPIOC, 8, 12);
+	GPIOC->PUPDR &= ~(0b11 << (8 << 1));
 
 	/* SDIO_D1 */
-	gpio_func(IO(PORTC, 9), 12);
-	gpio_mode(IO(PORTC, 9), PULL_NO);
+	setPinAF(GPIOC, 9, 12);
+	GPIOC->PUPDR &= ~(0b11 << (9 << 1));
 
 	/* SDIO_D2 */
-	gpio_func(IO(PORTC, 10), 12);
-	gpio_mode(IO(PORTC, 10), PULL_NO);
+	setPinAF(GPIOC, 10, 12);
+	GPIOC->PUPDR &= ~(0b11 << (10 << 1));
 
 	/* SDIO_D3 */
-	gpio_func(IO(PORTC, 11), 12);
-	gpio_mode(IO(PORTC, 11), PULL_NO);
+	setPinAF(GPIOC, 11, 12);
+	GPIOC->PUPDR &= ~(0b11 << (11 << 1));
 
 	/* SDIO_CK */
-	gpio_func(IO(PORTC, 12), 12);
-	gpio_mode(IO(PORTC, 12), PULL_NO);
+	setPinAF(GPIOC, 12, 12);
+	GPIOC->PUPDR &= ~(0b11 << (12 << 1));
 
 	/* SDIO_CMD */
-	gpio_func(IO(PORTD, 2), 12);
-	gpio_mode(IO(PORTD, 2), PULL_NO);
+	setPinAF(GPIOD, 2, 12);
+	GPIOD->PUPDR &= ~(0b11 << (2 << 1));
 
 	dstatus &= ~STA_NOINIT;
 
-	if (gpio_rd(IO(PORTB, 15)))
+	if (GPIOB->IDR & (1 << 15))
 		dstatus |= STA_NODISK;
 
 	if (dstatus & STA_NODISK)
 		return RES_OK;
 
-	or32(RCC_APB2ENR, BIT11);
-	wr32(R_SDIO_CLKCR, BIT8 | ((42000 / 400) - 2)); /* clk set to 400kHz */
-	wr32(R_SDIO_POWER, 0b11);
+	RCC->APB2ENR |= RCC_APB2ENR_SDIOEN;
+	SDIO->CLKCR |= ((45000 / 400) - 2); /* clk set to 400kHz */
+	SDIO->CLKCR |= SDIO_CLKCR_CLKEN;
+	// power on the card
+	SDIO->POWER |= 0b11;
 
 	send_cmd(0, 0, 0, NULL);
 
-	start = k_ticks();
+	beginCounter(1000);
 	if (send_cmd(8, 0x1AA, RESP_SHORT, resp) && ((resp[0] & 0xfff) == 0x1aa))
 	{
 		/* sdc v2 */
@@ -185,7 +197,7 @@ DSTATUS disk_initialize(BYTE pdrv)
 				log("card type: SD2\n");
 				break;
 			}
-		} while (k_elapsed(start) < ms_to_ticks(1000));
+		} while (!isTimeElapsed());
 
 		if (!card_type)
 		{
@@ -211,11 +223,11 @@ DSTATUS disk_initialize(BYTE pdrv)
 		while (1)
 		{
 			if (send_cmd(cmd, 0x00FF8000, RESP_SHORT, resp) &&
-				(resp[0] & BIT31))
+				(resp[0] & (1 << 31)))
 			{
 				break;
 			}
-			if (k_elapsed(start) > ms_to_ticks(1000))
+			if (isTimeElapsed())
 			{
 				err("cmd %d failed\n", cmd);
 				goto fail;
@@ -224,7 +236,7 @@ DSTATUS disk_initialize(BYTE pdrv)
 	}
 
 	byte_swap(&card_info[32], resp[0]);
-	log("card OCR: %08x\n", ((uint *)card_info)[8]);
+	// log("card OCR: %08x\n", ((uint *)card_info)[8]);
 
 	/* card state 'ready' */
 	if (!send_cmd(2, 0, RESP_LONG, resp)) /* enter ident state */
@@ -269,12 +281,13 @@ DSTATUS disk_initialize(BYTE pdrv)
 		/* Set wide bus */
 		if (!send_cmd(ACMD(6), 2, RESP_SHORT, resp) || (resp[0] & 0xfdf90000))
 			goto fail;
-		or32(R_SDIO_CLKCR, BIT11);
+		SDIO->CLKCR |= (1 << 11);
 	}
 
 	/* increase clock up to 4MHz */
-	and32(R_SDIO_CLKCR, ~0xff);
-	or32(R_SDIO_CLKCR, 10);
+
+	SDIO->CLKCR &= ~(0xFF);
+	SDIO->CLKCR |= 10;
 
 	dstatus &= ~STA_NOINIT;
 
@@ -282,8 +295,8 @@ DSTATUS disk_initialize(BYTE pdrv)
 
 fail:
 	dstatus = STA_NOINIT;
-	and32(RCC_APB2ENR, ~BIT11);
-	wr32(R_SDIO_POWER, 0b00);
+	RCC->APB2ENR &= ~(RCC_APB2ENR_SDIOEN);
+	SDIO->POWER &= ~(0b11);
 	return RES_ERROR;
 }
 
@@ -297,7 +310,6 @@ DRESULT disk_read(BYTE pdrv, BYTE *buf, DWORD sector, UINT count)
 	DWORD resp;
 	int cmd;
 	int rd;
-	DWORD t;
 	DWORD sta;
 	DWORD data;
 
@@ -315,7 +327,7 @@ DRESULT disk_read(BYTE pdrv, BYTE *buf, DWORD sector, UINT count)
 
 	cmd = (count > 1) ? 18 : 17;
 
-	t = k_ticks();
+	beginCounter(1000);
 	rd = 0;
 
 	SDIO->DCTRL = ((0b1001 << 4) | (1 << 1));
@@ -328,7 +340,7 @@ DRESULT disk_read(BYTE pdrv, BYTE *buf, DWORD sector, UINT count)
 	SDIO->ICR = 0xff;
 	SDIO->DCTRL |= (1 << 0);
 
-	while (k_elapsed(t) < ms_to_ticks(1000))
+	while (!isTimeElapsed())
 	{
 
 		sta = SDIO->STA;
@@ -367,7 +379,6 @@ DRESULT disk_write(BYTE pdrv, const BYTE *buf, DWORD sector, UINT count)
 	DWORD resp;
 	int cmd;
 	int wr;
-	DWORD t;
 	DWORD sta;
 	DWORD data;
 
@@ -395,7 +406,7 @@ DRESULT disk_write(BYTE pdrv, const BYTE *buf, DWORD sector, UINT count)
 		cmd = 25;
 	}
 
-	t = k_ticks();
+	beginCounter(1000);
 	wr = 0;
 	SDIO->DCTRL = (0b1001 << 4);
 	SDIO->DLEN = (512 * count);
@@ -410,7 +421,7 @@ DRESULT disk_write(BYTE pdrv, const BYTE *buf, DWORD sector, UINT count)
 	SDIO->ICR = 0xff;
 	SDIO->DCTRL |= (1 << 0);
 
-	while (k_elapsed(t) < ms_to_ticks(1000))
+	while (!isTimeElapsed())
 	{
 
 		sta = SDIO->STA;

@@ -2,7 +2,7 @@
 
 #include <stm32f4xx.h>
 
-void debugInit()
+void debugInit(void)
 {
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
     RCC->APB1ENR |= RCC_APB1ENR_USART3EN; // enable USART3
@@ -18,7 +18,7 @@ void debugInit()
     USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
 }
 
-char getChar()
+char getChar(void)
 {
     while ((USART3->SR & USART_SR_RXNE) == 0)
         ;
@@ -36,7 +36,7 @@ void sendLong(unsigned long dword)
 {
     while (dword)
     {
-        sendChar(dword & 0xFF);
+        sendChar('0' + (dword & 0xFF));
         dword >>= 8;
     }
 }
@@ -56,5 +56,5 @@ void println(const char *s)
 void error(const char *s)
 {
     print("Error ! ");
-    println(s);
+    print(s);
 }

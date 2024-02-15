@@ -2,7 +2,7 @@
 
 #include <stm32f4xx.h>
 
-void systemClockInit()
+void systemClockInit(void)
 {
     FLASH->ACR |= 0b011; // flash memory delay : 3 wait state
 

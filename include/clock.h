@@ -1,6 +1,15 @@
 #ifndef CLOCK_H
 #define CLOCK_H
 
-void systemClockInit();
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+    void systemClockInit(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
