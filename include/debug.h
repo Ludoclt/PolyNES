@@ -6,13 +6,13 @@ extern "C"
 {
 #endif
 
-    void debugInit(void);
+    void ioInit(void);
     char getChar(void);
     void sendChar(char c);
-    void sendLong(unsigned long dword);
-    void print(const char *s);
-    void println(const char *s);
-    void error(const char *s);
+    void sendString(const char *s);
+    void sendInt(int number);
+    void print(const char *s, ...);
+    void println(const char *s, ...);
 
 #ifdef __cplusplus
 }

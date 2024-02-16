@@ -4,16 +4,17 @@
 
 void SysTick_Handler(void)
 {
-    if (start_time != 0)
-        start_time--;
+    if (elapsed_time != counter_time)
+        elapsed_time++;
     else
     {
         // stop counter
         SysTick->CTRL &= ~1;        // disable SysTick
         SysTick->CTRL &= ~(1 << 1); // disable interrupt
-        counter_started = 0;
+        elapsed_time = 0;
+        counter_time = 0;
+        isr_delay = 0;
     }
-
     if (isr_delay != 0)
         isr_delay--;
 }
@@ -28,38 +29,42 @@ void sysTickInit(uint32_t ahb_freq)
     SysTick->LOAD = ahb_freq / 1000 - 1;
 }
 
-void delay_ms(uint32_t time)
+void delay_ms(uint32_t ms)
 {
-    if (!counter_started)
+    if (counter_time == 0)
     {
         SysTick->VAL = 0;   // set current value to 0
         SysTick->CTRL |= 1; // enable SysTick
-        while (time)
+        while (ms)
         {
             while ((SysTick->CTRL & (1 << 16)) == 0)
                 ;
-            time--;
+            ms--;
         }
         SysTick->CTRL &= ~1; // disable SysTick
     }
     else
     {
-        isr_delay = time;
+        isr_delay = ms;
         while (isr_delay != 0)
             ;
     }
 }
 
-void beginCounter(uint32_t time)
+void beginCounter(uint32_t ms)
 {
-    start_time = time;
+    counter_time = ms;
     SysTick->VAL = 0;          // set current value to 0
     SysTick->CTRL |= (1 << 1); // enable interrupt
     SysTick->CTRL |= 1;        // enable SysTick
-    counter_started = 1;
+}
+
+uint32_t getElapsedTime(void)
+{
+    return elapsed_time;
 }
 
 uint8_t isTimeElapsed(void)
 {
-    return start_time == 0 ? 1 : 0;
+    return counter_time == 0 ? 1 : 0;
 }

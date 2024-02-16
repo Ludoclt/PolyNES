@@ -1,8 +1,10 @@
 #include "debug.h"
 
 #include <stm32f4xx.h>
+#include <stdarg.h>
+#include <stdio.h>
 
-void debugInit(void)
+void ioInit(void)
 {
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
     RCC->APB1ENR |= RCC_APB1ENR_USART3EN; // enable USART3
@@ -32,29 +34,52 @@ void sendChar(char c)
     USART3->DR = c;
 }
 
-void sendLong(unsigned long dword)
+void sendString(const char *s)
 {
-    while (dword)
+    while (*s)
     {
-        sendChar('0' + (dword & 0xFF));
-        dword >>= 8;
+        sendChar(*s++);
     }
 }
 
-void print(const char *s)
+void sendInt(int number)
 {
-    while (*s)
-        sendChar(*s++);
+    char buf[4];
+    sprintf(buf, "%d", number);
+    sendString(buf);
 }
 
-void println(const char *s)
+void print(const char *s, ...)
+{
+    va_list args;
+    va_start(args, s);
+
+    while (*s)
+    {
+        if (*s == '%')
+        {
+            switch (*(++s))
+            {
+            case 's':
+                sendString(va_arg(args, const char *));
+                break;
+            case 'd':
+                sendInt(va_arg(args, int));
+                break;
+            default:
+                sendChar(*s);
+                break;
+            }
+            s++;
+        }
+        else
+            sendChar(*s++);
+    }
+    va_end(args);
+}
+
+void println(const char *s, ...)
 {
     print(s);
     sendChar('\n');
-}
-
-void error(const char *s)
-{
-    print("Error ! ");
-    print(s);
 }
