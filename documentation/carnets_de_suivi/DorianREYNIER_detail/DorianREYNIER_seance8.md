@@ -33,6 +33,12 @@
 
   ![branchement batterie](/documentation/Images/branchementBatterie.png)
 
+  Légende:
+  fil arduino bleu : lecture du la tension des batteries
+  fils arduino noirs : ground du circuit
+  fil arduino rouge : 5V du circuit
+  pcb marron : diviseur de tention pour être supporté par les ports de l'arduino
+
 - ##### création d'autocolants
 
   N'étant pas satifait de la première tentative de conception d'un autocollant, j'ai recommencé. Cette fois j'ai reproduit l'autocollant de la NES dans un thème polytech.  
