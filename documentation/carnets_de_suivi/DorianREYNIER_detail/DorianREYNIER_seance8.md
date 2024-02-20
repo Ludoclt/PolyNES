@@ -22,3 +22,9 @@
 - ##### 3D
   J'ai récupéré les impréssions 3D lancées durant la semaine, je les ai désuporisées, poncé les impurtées, peint les pièces de couleurs différentes, inséré et coller des aimants dans les manettes, ajouté des insert dans le bloc principale, tailler les vis a la bonne taille...
   
+- ##### Conception du systeme de batterie
+
+J'utiliserai deux cellules 18650 pour avoir une tention suppérieur à 5V (7.4V) avec un régilateur de tention vers 5V. Je connecte un fil sur les borne d'une piles pour connecter mon arduino en m'en servir de voltmètre pour connaitre la tention de la batterie, donc son niveau de batterie. 
+
+
+  ![branchement batterie](/documentation/Images/branchementBatterie.png)
