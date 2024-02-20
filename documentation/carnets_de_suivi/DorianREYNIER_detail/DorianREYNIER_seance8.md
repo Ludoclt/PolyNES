@@ -16,10 +16,7 @@
 
   ![ESP32-C3_2](/documentation/Images/ESP32-C3_2.png)
 
-  Les tests du Shift register étant concluants, j'ai installé le composant sur ma plaque d'essai et j'y ai soudé les boutons.  
-  J'ai dû souder des résistances sur les boutons car l'usage du pullup est impossible combiné avec un Shift register.  
-  ![pcb_recto](/documentation/Images/pcb_recto.png)    
-  ![pcb_verso](/documentation/Images/pcb_verso.png)
+  J'ai également soudé de nobreuses pièces pour d'autres groupes, tel que trois bouttons, une antenne radio, des fils sur un module, deux moteurs...
   
 - ##### Connectique Bluetooth
   J'ai également réussi à établir la connection Bluetooth entre deux esp32 (un serveur et un client) grâce aux codes exemples fournis dans la bibliothèque BLE.
