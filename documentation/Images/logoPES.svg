@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="image.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'Nes Controller';-inkscape-font-specification:'Nes Controller';baseline-shift:baseline;white-space:pre;inline-size:61.3733;fill:#c6d300;stroke-width:0.264583"
+       x="21.825438"
+       y="20.00102"
+       id="text4"
+       transform="matrix(1,0,0,1.6125998,-21.548745,-21.558836)"><tspan
+         x="21.825438"
+         y="20.00102"
+         id="tspan2"><tspan
+           style="baseline-shift:baseline"
+           id="tspan1">EnTERTAINMENT SYSTEM</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'RO Spritendo';-inkscape-font-specification:'RO Spritendo';white-space:pre;inline-size:37.442;fill:#c6d300;stroke:#c6d300;stroke-width:0.264583;stroke-opacity:0"
+       x="31.82143"
+       y="6.784749"
+       id="text6"
+       transform="matrix(1.0004845,0,0,0.87583779,-31.367501,-1.6608651)"><tspan
+         x="31.82143"
+         y="6.784749"
+         id="tspan4">Polytech<tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan3">©</tspan> </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.53419px;font-family:Arial;-inkscape-font-specification:Arial;fill:#c6d300;stroke-width:0.23758"
+       x="38.438404"
+       y="9.481967"
+       id="text12"
+       transform="scale(1.1136577,0.89794198)"><tspan
+         sodipodi:role="line"
+         id="tspan12"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.53419px;font-family:'Nes Controller';-inkscape-font-specification:'Nes Controller';stroke-width:0.23758"
+         x="38.438404"
+         y="9.481967">tm</tspan></text>
+  </g>
+</svg>
