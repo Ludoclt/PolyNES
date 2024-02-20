@@ -18,11 +18,6 @@
 
   J'ai également soudé de nobreuses pièces pour d'autres groupes, tel que trois bouttons, une antenne radio, des fils sur un module, deux moteurs...
   
-- ##### Connectique Bluetooth
-  J'ai également réussi à établir la connection Bluetooth entre deux esp32 (un serveur et un client) grâce aux codes exemples fournis dans la bibliothèque BLE.
-  Pour la prochaine séance, je vais tester ce même code pour faire communiquer deux clients avec le serveur.
-
-- ##### Test impression
-  J'ai lancé une impression 3D d'un bout de la coque principale du projet pour vérifier qu'elle soit assez solide pour supporter le retrait des cartouches.  
-  ![test3D](/documentation/Images/test3D.png)
+- ##### 3D
+  J'ai récupéré les impréssions 3D lancées durant la semaine, je les ai désuporisées, poncé les impurtées, peint les pièces de couleurs différentes, inséré et coller des aimants dans les manettes, ajouté des insert dans le bloc principale, tailler les vis a la bonne taille...
   
