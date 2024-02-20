@@ -40,3 +40,5 @@
   
 ![trappe nes](/documentation/Images/trappeNES.png)
 ![logoPES](/documentation/Images/logoPES.svg)
+
+P.S. Github fait apparaitre des bugs graphiques mais sur Inkscape le svg est bien affiché.
