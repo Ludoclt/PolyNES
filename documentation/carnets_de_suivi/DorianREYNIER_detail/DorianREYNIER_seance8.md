@@ -4,7 +4,7 @@
 ## Séance du 19 Février
 
 - ##### Résolution de problème
-  Après test la pcb des manettes ne fonctionnait pas, j'ai donc fait de nombreux tests pour chercher l'origine de la panne, notamment replacer le contrôleur, remplacer le registre à décalage, vérifier qu'il n'y ait pas de court-circuit avec le tester de continuité du multimètre, vérifier que tous les composants soient bien alimentés. En cours j'ai pu utiliser un oscilloscope et essayer de trouver l'origine du problème en en comparant les signaux de la clock avec ceux de sortie du registre. J'en suis venu à la conclusion que le problème venait de la résistance trop importante. J'ai donc ajouté une résistance de 820/830Ω en parallèle avec celle de 10kΩ déjà présente.
+  Après test la PCB des manettes ne fonctionnait pas, j'ai donc fait de nombreux tests pour chercher l'origine de la panne, notamment replacer le contrôleur, remplacer le registre à décalage, vérifier qu'il n'y ait pas de court-circuit avec le tester de continuité du multimètre, vérifier que tous les composants soient bien alimentés. En cours j'ai pu utiliser un oscilloscope et essayer de trouver l'origine du problème en en comparant les signaux de la clock avec ceux de sortie du registre. J'en suis venu à la conclusion que le problème venait de la résistance trop importante. J'ai donc ajouté une résistance de 820/830Ω en parallèle avec celle de 10kΩ déjà présente.
   Remerciement: M. Masson pour son aide dans la résolution du problème
 
   ![pcb manette + resistance](/documentation/Images/pcbResistant.png)
