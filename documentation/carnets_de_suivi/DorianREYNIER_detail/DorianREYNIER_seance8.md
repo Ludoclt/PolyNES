@@ -5,6 +5,7 @@
 
 - ##### Résolution de problème
   Aprèe test la pcb des manettes de fonctionnait pas, j'ai donc fait de nombreux tests pour chercher l'origine de la panne, nottement replacer le controleur, remplacer le rejistre à décalalage, verifier qu'il n'y ai pas de cour-circuit avec le tester de continuité du multimètre, verifier que tout les composants soient bien alimentés. En cour j'ai pu utiliser un oscilloscope et essayer de trouver l'origine du problème en en comparant les signaux de la clock avec ceux de sorti du registre. J'en suis venu à la conclusion que le problème venait de la résistance trop importante. J'ai donc ajouté un résistance de 820/830 Ω en parallèles avec celle de 10kΩ déjà présente.
+  Remerciement: M Masson pour son aide dans la résolution du problème
 
   ![pcb manette + resistance](/documentation/Images/pcbResistant.png)
   ![Oscillo](/documentation/Images/oscillo.png)
