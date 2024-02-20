@@ -36,7 +36,7 @@
   Légende:
   fil arduino bleu : lecture du la tension des batteries
   fils arduino noirs : ground du circuit
-  fil arduino rouge : 5V du circuit
+  fil arduino vert : 5V du circuit
   pcb marron : diviseur de tention pour être supporté par les ports de l'arduino
 
 - ##### création d'autocolants
