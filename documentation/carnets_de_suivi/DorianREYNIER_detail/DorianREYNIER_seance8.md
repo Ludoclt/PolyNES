@@ -21,6 +21,10 @@
   
 - ##### 3D
   J'ai récupéré les impressions 3D lancées durant la semaine, je les ai désuporisées, poncé les impuretés, peint les pièces de couleurs différentes, inséré et coller des aimants dans les manettes, ajouté des inserts dans le bloc principal, tailler les vis a la bonne taille...
+
+  ![Boiter 3D](/documentation/Images/Boitier3D.png)
+  ![3D manette](/documentation/Images/3Dmanette.png)
+  ![3D manette démonté](/documentation/Images/3DManetteDemonte.png)
   
 - ##### Conception du systeme de batterie
 
