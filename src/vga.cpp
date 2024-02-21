@@ -8,10 +8,9 @@ VGA::VGA()
     RCC->APB2ENR |= RCC_APB2ENR_LTDCEN; // enable LTDC clock
 
     // PLLSAI (pixel clock) configuration
-    RCC->PLLSAICFGR |= (200 << 6);    // PLLSAIN *200
-    RCC->PLLSAICFGR |= (0b010 << 28); // PLLSAIR /2
-    RCC->DCKCFGR &= ~(0b11 << 16);    // reset
-    RCC->DCKCFGR |= (0b01 << 16);     // /4
+    RCC->PLLSAICFGR |= (72 << 6);     // PLLSAIN *72
+    RCC->PLLSAICFGR |= (0b111 << 28); // PLLSAIR /7
+    RCC->DCKCFGR &= ~(0b11 << 16);    // reset /2
 
     RCC->CR |= RCC_CR_PLLSAION; // enable PLLSAI
     while ((RCC->CR & RCC_CR_PLLSAIRDY) == 0)
@@ -67,7 +66,7 @@ VGA::VGA()
     LTDC->AWCR |= (((HSYNC + HBP + WIDTH - 1) << 16) | (VSYNC + VBP + HEIGHT - 1));
     LTDC->TWCR |= (((HSYNC + HBP + WIDTH + HFP - 1) << 16) | (VSYNC + VBP + HEIGHT + VFP - 1));
     // polarity
-    LTDC->GCR &= ~(1 << 31); // HSYNC negative
+    LTDC->GCR |= (1 << 31);  // HSYNC positive
     LTDC->GCR &= ~(1 << 30); // VSYNC negative
 
     // bg color
@@ -77,19 +76,33 @@ VGA::VGA()
     LTDC_Layer2->WHPCR |= (((HSYNC + HBP + WIDTH - 1) << 16) | (HSYNC + HBP));
     LTDC_Layer2->WVPCR |= (((VSYNC + VBP + HEIGHT - 1) << 16) | (VSYNC + VBP));
 
-    // LTDC_Layer2->CFBAR = (uint32_t)fb;
+    LTDC_Layer2->PFCR |= 0b101;
 
-    LTDC_Layer2->CACR = 0;
+    LTDC_Layer2->CFBAR = (uint32_t)fb;
+
+    LTDC_Layer2->CACR = 255;
 
     LTDC_Layer2->CFBLR |= (((WIDTH * PIXEL_SIZE) << 16) | (WIDTH * PIXEL_SIZE + 3));
     LTDC_Layer2->CFBLNR |= HEIGHT;
 
+    // CLUT
+    for (int i = 0; i < 0x40; i++)
+    {
+        // Adress
+        LTDC_Layer2->CLUTWR &= ~(0xFF << 24);
+        LTDC_Layer2->CLUTWR |= (i << 24);
+        // Color
+        LTDC_Layer2->CLUTWR &= ~(0xFFFFFF);
+        LTDC_Layer2->CLUTWR |= (nesPalette[i] & 0xFFFFFF);
+    }
+
     // enable layer and LTDC activation
     LTDC_Layer2->CR |= LTDC_LxCR_LEN;
+    LTDC_Layer2->CR |= (1 << 4); // enable CLUT
     LTDC->GCR |= LTDC_GCR_LTDCEN;
 }
 
-void VGA::setPixel(uint16_t x, uint16_t y, uint32_t color)
+void VGA::setPixel(uint16_t x, uint16_t y, uint8_t color_index)
 {
-    // fb[(y - 1) * WIDTH + x] = color;
+    fb[y * WIDTH + x] = color_index;
 }
