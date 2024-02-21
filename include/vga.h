@@ -3,18 +3,20 @@
 
 #include <stm32f4xx.h>
 
-#define WIDTH ((uint16_t)256)
-#define HEIGHT ((uint16_t)240)
+#define WIDTH ((uint16_t)640)
+#define HEIGHT ((uint16_t)480)
 
-#define HSYNC ((uint16_t)32)
-#define HBP ((uint16_t)40)
-#define HFP ((uint16_t)8)
+#define HSYNC ((uint16_t)96)
+#define HBP ((uint16_t)48)
+#define HFP ((uint16_t)16)
 
-#define VSYNC ((uint16_t)8)
-#define VBP ((uint16_t)6)
-#define VFP ((uint16_t)1)
+#define VSYNC ((uint16_t)2)
+#define VBP ((uint16_t)33)
+#define VFP ((uint16_t)10)
 
-#define PIXEL_SIZE 3
+#define PIXEL_SIZE 4
+
+const uint32_t fb[WIDTH * HEIGHT] = {};
 
 const uint32_t nesPalette[0x40] = {0x656666, 0x002D69, 0x131F7F, 0x3C137C, 0x600B62, 0x730A37, 0x710F07, 0x5A1A00, 0x342800, 0x0B3400, 0x003C00, 0x013D10, 0x013840, 0x0000, 0x0000, 0x0000,
                                    0xAEAEAE, 0x0F63B3, 0x4051D0, 0x7841CC, 0xA736A9, 0xC03470, 0xBD3C30, 0x9F4A00, 0x6D5C01, 0x366D01, 0x077704, 0x00793D, 0x00727D, 0x0000, 0x0000, 0x0000,
@@ -26,7 +28,7 @@ class VGA
 public:
     VGA();
 
-    uint8_t fb[WIDTH * HEIGHT];
+    // uint8_t fb[WIDTH * HEIGHT];
 
     void setPixel(uint16_t x, uint16_t y, uint8_t color_index);
 };
