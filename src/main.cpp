@@ -2,7 +2,7 @@
 #include "clock.h"
 #include "tick.h"
 #include "debug.h"
-#include "vga.h"
+// #include "vga.h"
 
 #include <ff.h>
 
@@ -104,10 +104,10 @@ int main()
     ioInit();
 
     // fatfs
-    // fatfs_test();
+    fatfs_test();
 
     // vga
-    VGA vga;
+    // VGA vga;
 
     // loop
     while (1)

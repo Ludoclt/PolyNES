@@ -139,30 +139,36 @@ DSTATUS disk_initialize(BYTE pdrv)
 	/* SDIO_D0 PC8 */
 	lib_setPinAF(GPIOC, 8, 12);
 	GPIOC->PUPDR &= ~(0b11 << (8 << 1));
+	GPIOC->PUPDR |= (0b01 << (8 << 1));
 
 	/* SDIO_D1 */
 	lib_setPinAF(GPIOC, 9, 12);
 	GPIOC->PUPDR &= ~(0b11 << (9 << 1));
+	GPIOC->PUPDR |= (0b01 << (9 << 1));
 
 	/* SDIO_D2 */
 	lib_setPinAF(GPIOC, 10, 12);
 	GPIOC->PUPDR &= ~(0b11 << (10 << 1));
+	GPIOC->PUPDR |= (0b01 << (10 << 1));
 
 	/* SDIO_D3 */
 	lib_setPinAF(GPIOC, 11, 12);
 	GPIOC->PUPDR &= ~(0b11 << (11 << 1));
+	GPIOC->PUPDR |= (0b01 << (11 << 1));
 
 	/* SDIO_CK */
 	lib_setPinAF(GPIOC, 12, 12);
 	GPIOC->PUPDR &= ~(0b11 << (12 << 1));
+	GPIOC->PUPDR |= (0b01 << (12 << 1));
 
 	/* SDIO_CMD */
 	lib_setPinAF(GPIOD, 2, 12);
 	GPIOD->PUPDR &= ~(0b11 << (2 << 1));
+	GPIOD->PUPDR |= (0b01 << (2 << 1));
 
 	dstatus &= ~STA_NOINIT;
 
-	if (GPIOB->IDR & (1 << 15))
+	if (!(GPIOB->IDR & (1 << 15)))
 		dstatus |= STA_NODISK;
 
 	if (dstatus & STA_NODISK)
@@ -332,6 +338,10 @@ DRESULT disk_read(BYTE pdrv, BYTE *buf, DWORD sector, UINT count)
 		return RES_ERROR;
 	SDIO->ICR = 0xff;
 	SDIO->DCTRL |= (1 << 0);
+	// SDIO->DCTRL |= (SDIO_DCTRL_SDIOEN |
+	// 				SDIO_DCTRL_RWSTART |
+	// 				SDIO_DCTRL_DTDIR |
+	// 				SDIO_DCTRL_DTEN);
 
 	while (!lib_isTimeElapsed())
 	{

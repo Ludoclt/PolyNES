@@ -39,27 +39,27 @@ VGA::VGA()
     setPinAF(GPIOB, 10, 0b1110); // LCD_G4
     setPinAF(GPIOB, 11, 0b1110); // LCD_G5
 
-    setPinAF(GPIOC, 6, 0b1110);  // LCD_HSYNC
-    setPinAF(GPIOC, 7, 0b1110);  // LCD_G6
-    setPinAF(GPIOC, 10, 0b1110); // LCD_R2
+    setPinAF(GPIOC, 6, 0b1110); // LCD_HSYNC
+    setPinAF(GPIOC, 7, 0b1110); // LCD_G6
+    // setPinAF(GPIOC, 10, 0b1110); // LCD_R2
 
-    setPinAF(GPIOD, 3, 0b1110);  // LCD_G7
-    setPinAF(GPIOD, 6, 0b1110);  // LCD_B2
+    setPinAF(GPIOD, 3, 0b1110); // LCD_G7
+    // setPinAF(GPIOD, 6, 0b1110);  // LCD_B2
     setPinAF(GPIOD, 10, 0b1110); // LCD_B3
 
-    setPinAF(GPIOE, 4, 0b1110);  // LCD_B0
-    setPinAF(GPIOE, 5, 0b1110);  // LCD_G0
-    setPinAF(GPIOE, 6, 0b1110);  // LCD_G1
+    // setPinAF(GPIOE, 4, 0b1110); // LCD_B0
+    // setPinAF(GPIOE, 5, 0b1110);  // LCD_G0
+    // setPinAF(GPIOE, 6, 0b1110);  // LCD_G1
     setPinAF(GPIOE, 11, 0b1110); // LCD_G3
     setPinAF(GPIOE, 12, 0b1110); // LCD_B4
     setPinAF(GPIOE, 13, 0b1110); // LCD_DE
-    setPinAF(GPIOE, 14, 0b1110); // LCD_CLK connect to LCD_R1 if nucleo 144 used
+    setPinAF(GPIOE, 14, 0b1110); // LCD_CLK
     setPinAF(GPIOE, 15, 0b1110); // LCD_R7
 
-    setPinAF(GPIOG, 12, 0b1110); // LCD_B1
+    // setPinAF(GPIOG, 12, 0b1110); // LCD_B1
 
-    setPinAF(GPIOH, 2, 0b1110); // LCD_R0
-    setPinAF(GPIOH, 3, 0b1110); // LCD_R1 missing pin on nucleo 144 board
+    // setPinAF(GPIOH, 2, 0b1110); // LCD_R0
+    // setPinAF(GPIOH, 3, 0b1110); // LCD_R1 missing pin on nucleo 144 board
 
     // timing setup
     LTDC->SSCR |= (((HSYNC - 1) << 16) | (VSYNC - 1));
@@ -71,17 +71,17 @@ VGA::VGA()
     LTDC->GCR &= ~(1 << 30); // VSYNC negative
 
     // bg color
-    LTDC->BCCR = 0xFF0F0009;
+    LTDC->BCCR = 0xFFFFFF;
 
     // layer setup
     LTDC_Layer2->WHPCR |= (((HSYNC + HBP + WIDTH - 1) << 16) | (HSYNC + HBP));
     LTDC_Layer2->WVPCR |= (((VSYNC + VBP + HEIGHT - 1) << 16) | (VSYNC + VBP));
 
-    // LTDC_Layer2->PFCR |= 0b101;
+    LTDC_Layer2->PFCR |= 0b010; // RGB565
 
-    // LTDC_Layer2->CFBAR = (uint32_t)fb;
+    LTDC_Layer2->CFBAR = (uint32_t)&fb[0];
 
-    LTDC_Layer2->CACR = 0;
+    LTDC_Layer2->CACR = 255;
 
     LTDC_Layer2->CFBLR |= (((WIDTH * PIXEL_SIZE) << 16) | (WIDTH * PIXEL_SIZE + 3));
     LTDC_Layer2->CFBLNR |= HEIGHT;
