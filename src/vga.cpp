@@ -41,7 +41,7 @@ VGA::VGA()
 
     setPinAF(GPIOC, 6, 0b1110); // LCD_HSYNC
     setPinAF(GPIOC, 7, 0b1110); // LCD_G6
-    // setPinAF(GPIOC, 10, 0b1110); // LCD_R2
+    // setPinAF(GPIOC, 10, 0b1110); // LCD_R2 missing pin on nucleo 144 board
 
     setPinAF(GPIOD, 3, 0b1110);  // LCD_G7
     setPinAF(GPIOD, 6, 0b1110);  // LCD_B2
@@ -71,20 +71,20 @@ VGA::VGA()
     LTDC->GCR &= ~(1 << 30); // VSYNC negative
 
     // bg color
-    LTDC->BCCR = 0x0000FF;
+    LTDC->BCCR = 0xFFFFFF;
 
     // layer setup
-    LTDC_Layer2->WHPCR |= (((HSYNC + HBP + WIDTH - 1) << 16) | (HSYNC + HBP));
-    LTDC_Layer2->WVPCR |= (((VSYNC + VBP + HEIGHT - 1) << 16) | (VSYNC + VBP));
+    LTDC_Layer1->WHPCR |= (((HSYNC + HBP + SCREEN_WIDTH - 1) << 16) | (HSYNC + HBP));
+    LTDC_Layer1->WVPCR |= (((VSYNC + VBP + SCREEN_HEIGHT - 1) << 16) | (VSYNC + VBP));
 
-    // LTDC_Layer2->PFCR |= 0b101; // L8
+    // LTDC_Layer1->PFCR |= 0b001; // RGB888
 
-    LTDC_Layer2->CFBAR = (uint32_t)&fb[0];
+    LTDC_Layer1->CFBAR = (uint32_t)fb;
 
-    LTDC_Layer2->CACR = 255;
+    LTDC_Layer1->CACR = 255;
 
-    LTDC_Layer2->CFBLR |= (((WIDTH * PIXEL_SIZE) << 16) | (WIDTH * PIXEL_SIZE + 3));
-    LTDC_Layer2->CFBLNR |= HEIGHT;
+    LTDC_Layer1->CFBLR |= (((SCREEN_WIDTH * PIXEL_SIZE) << 16) | (SCREEN_WIDTH * PIXEL_SIZE + 3));
+    LTDC_Layer1->CFBLNR |= SCREEN_HEIGHT;
 
     // CLUT
     // for (int i = 0; i < 0x40; i++)
@@ -97,9 +97,15 @@ VGA::VGA()
     //     LTDC_Layer2->CLUTWR |= (nesPalette[i] & 0xFFFFFF);
     // }
 
+    LTDC_Layer1->DCCR = 0xFF0000FF;
+    // LTDC_Layer1->BFCR &= ~(0b111);
+    // LTDC_Layer1->BFCR |= 0b101; // BF2
+    // LTDC_Layer1->BFCR &= ~(0b111 << 8);
+    // LTDC_Layer1->BFCR |= (0b100 << 8); // BF1
+
     // enable layer and LTDC activation
-    LTDC_Layer2->CR |= LTDC_LxCR_LEN;
-    // LTDC_Layer2->CR |= (1 << 4); // enable CLUT
+    LTDC_Layer1->CR |= 1;
+    // LTDC_Layer1->CR |= (1 << 4); // enable CLUT
     LTDC->GCR |= LTDC_GCR_LTDCEN;
 }
 
