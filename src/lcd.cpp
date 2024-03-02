@@ -23,7 +23,7 @@ LCD::LCD()
     sendData(0x00);    // VCOM L 0000000
 
     sendCommand(0x36); // Memory Access Control
-    sendData(0x48);
+    sendData(0x8);
 
     sendCommand(0x3A); // COLMOD: Pixel Format Set
     sendData(0x55);    // 16 Bit RGB and MCU
